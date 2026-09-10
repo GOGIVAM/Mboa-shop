@@ -234,8 +234,6 @@ const fr = {
   'home.sellerCount': 'Vendeurs actifs',
   'home.trust1Title': 'Mobile money',
   'home.trust1Text': 'Orange Money · MTN MoMo',
-  'home.trust1Title': 'Mobile money',
-  'home.trust1Text': 'Orange Money · MTN MoMo',
   'home.trustOm': 'Orange Money',
   'home.trustOmText': 'Confirmation sur votre téléphone',
   'home.trustMtn': 'MTN MoMo',
