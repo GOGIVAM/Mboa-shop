@@ -75,7 +75,7 @@ function validate(field: keyof FormState, value: string, payment: PaymentMethod)
   if (field === 'phone' || field === 'momoNumber') {
     if (field === 'momoNumber' && payment !== 'om' && payment !== 'momo') return null;
     if (!v) return 'valid.required';
-    return /^(\+237\s?)?6\d(\s?\d{2}){4}$/.test(v.replace(/\s+/g, ' ')) ? null : 'valid.phone';
+    return /^(\+?237)?6\d{8}$/.test(v.replace(/[\s.-]+/g, '')) ? null : 'valid.phone';
   }
   if (field === 'address') {
     if (!v) return 'valid.required';

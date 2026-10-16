@@ -25,7 +25,7 @@ function validate(field: keyof Form, form: Form, mode: Mode): TKey | null {
   if (!v) return 'valid.required';
   if (field === 'name') return v.length < 3 ? 'valid.nameShort' : null;
   if (field === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? null : 'valid.email';
-  if (field === 'phone') return /^(\+237\s?)?6\d(\s?\d{2}){4}$/.test(v.replace(/\s+/g, ' ')) ? null : 'valid.phone';
+  if (field === 'phone') return /^(\+?237)?6\d{8}$/.test(v.replace(/[\s.-]+/g, '')) ? null : 'valid.phone';
   if (field === 'password') return v.length < 8 ? 'valid.passwordShort' : null;
   if (field === 'confirm') return v === form.password ? null : 'valid.confirmMismatch';
   return null;

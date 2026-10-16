@@ -37,7 +37,7 @@ function validate(field: Field, value: string): TKey | null {
   if (field === 'owner') return v.length < 3 ? 'valid.nameShort' : null;
   if (field === 'email') return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? null : 'valid.email';
   if (field === 'phone' || field === 'payoutNumber') {
-    return /^(\+237\s?)?6\d(\s?\d{2}){4}$/.test(v.replace(/\s+/g, ' ')) ? null : 'valid.phone';
+    return /^(\+?237)?6\d{8}$/.test(v.replace(/[\s.-]+/g, '')) ? null : 'valid.phone';
   }
   if (field === 'address') return v.length < 8 ? 'valid.addressShort' : null;
   if (field === 'description') return v.length < 20 ? 'valid.descShort' : null;
